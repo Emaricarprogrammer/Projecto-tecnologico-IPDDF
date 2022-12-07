@@ -5,9 +5,9 @@
 #include<time.h>
 #include<stdlib.h>
 
-//V·riaveis globais
+//V√°riaveis globais
 
-//v·riaveis do tipo char
+//v√°riaveis do tipo char
 char nome[30];
 char apelido[30];
 char nascimento;
@@ -15,8 +15,9 @@ char morada;
 char sexo;
 char resp;
 char resp2;
+char numconta_segundo;
 
-//v·riaveis do tipo int
+//v√°riaveis do tipo int
 
 int telefone[12];
 int pin=0;
@@ -26,11 +27,10 @@ int opcao2;
 int o;
 int numcliente;
 int numconta;
-int numconta_segundo;
 int iban[21];
 int k;
 
-//v·riaveis do tipo float
+//v√°riaveis do tipo float
 float valor_levantar;
 float dinheirodaconta=5000.00;
 float saldo;
@@ -38,10 +38,10 @@ float levantamento;
 float valor_transferir;
 float novo_saldo;
 
-//FunÁ„o Gest„o de conta
+//Fun√ß√£o Gest√£o de conta
 void gestaodeconta(){
 	
-	//InstruÁ„o para pegar a data
+	//Instru√ß√£o para pegar a data
 	
 	struct tm *data_hora_actual;
 	time_t segundos;
@@ -50,24 +50,24 @@ void gestaodeconta(){
 	
 	//Menu principal
 	
-	//==========================================================================
+	//=========================================================================
 		printf("\n\t======================");
-		printf("\tMenu Gest„o de conta");
+		printf("\tMenu Gest√£o de conta");
 		printf("\t======================");
 		printf("\n\t1. Abrir conta");
 		printf("\n\t2. Consultar Saldo");
 		printf("\n\t3. Levantamentos");
 		printf("\n\t4. Consultar movimentos");
-		printf("\n\t5. TransferÍncia");
+		printf("\n\t5. Transfer√™ncia");
 		printf("\n\t6. Pagamento");
 		printf("\n\t7. Consultar IBAN/N de conta");
 		printf("\n\t0. Sair\n");
-		printf("\tEscolha uma opÁ„o:");scanf("%d",&opcao2);
+		printf("\tEscolha uma op√ß√£o:");scanf("%d",&opcao2);
 		
 		while(opcao2!=1 && opcao2!=2 && opcao2!=3 && opcao2!=4 && opcao2!=5 && opcao2!=6 && opcao2!=0 && opcao2!=7){
 		printf("\n\t======================");
-		// enquanto as opÁıes forem diferentes o sistema far·:
-		printf("\n\tOpÁ„o inv·lida,escolha uma opÁ„o v·lida:");scanf("%d",&opcao2);}
+		// enquanto as op√ß√µes forem diferentes o sistema far√°:
+		printf("\n\tOp√ß√£o inv√°lida,escolha uma op√ß√£o v√°lida:");scanf("%d",&opcao2);}
 	//==========================================================================
 
 	//Limpe a tela
@@ -82,7 +82,7 @@ void gestaodeconta(){
 			for(o=0;o<1;o++){
 		//formulario de ab conta
 		printf("\n\t======================");
-		printf("\tFÛrmulario de abertura de conta");
+		printf("\tF√≥rmulario de abertura de conta");
 		printf("\t======================");
 		printf("\n\tSeu primeiro nome:");scanf("%s",&nome[o]);
 		printf("\n\tSeu Apelido:");scanf("%s",&apelido[o]);
@@ -90,13 +90,13 @@ void gestaodeconta(){
 		
 		while(sexo!='M' && sexo!='m' && sexo!='Masculino' && sexo!='masculino' && sexo!='MASCULINO' && sexo!='F' && sexo!='f' && sexo!='Femenino' && sexo!='femenino' && sexo!='FEMENINO'){
 		printf("\n\t======================");
-		// enquanto sexo for diferente de dos sexos v·lidos tantos escritos em letra mai˙sculas como min˙sculas o sistema far·:
-		printf("\n\tsexo inv·lido,digite um sexo v·lido:");scanf("%s",&sexo);
+		// enquanto sexo for diferente de dos sexos v√°lidos tantos escritos em letra mai√∫sculas como min√∫sculas o sistema far√°:
+		printf("\n\tsexo inv√°lido,digite um sexo v√°lido:");scanf("%s",&sexo);
 		}
-		// caso contr·rio continue
+		// caso contr√°rio continue
 		printf("\n\tSua data de nascimento:");scanf("%s",&nascimento);
 		printf("\n\tSua Morada:");scanf("%s",&morada);
-		printf("\n\tSeu n˙mero de telefone :9");scanf("%d",&telefone[o]);
+		printf("\n\tSeu n√∫mero de telefone :9");scanf("%d",&telefone[o]);
 		printf("\n\tCrie um PIN:");scanf("%d",&pin);
 		while(pin<1000 || pin>=10000)
 		{
@@ -109,7 +109,7 @@ void gestaodeconta(){
 		srand(time(NULL));
 		numerosaleatorios= 100000+rand()%900000;
 		
-		//n˙mero do cliente
+		//Gerando n√∫mero do cliente
 		numcliente=rand()%100;
 	//==========================================================================
 	//Mensagem de abertura de conta
@@ -124,10 +124,10 @@ void gestaodeconta(){
 		printf("\n\t======================");
 		printf("\tConsulta de Saldo");
 		printf(" ======================\n");
-			printf("\tInsira o seu N∫ de conta:");scanf("%d",&numconta);
-		//condic„o composta
+			printf("\tInsira o seu N¬∫ de conta:");scanf("%d",&numconta);
+		//condic√£o composta
 		if(numconta!=numerosaleatorios){
-		printf("\tEst· conta n„o existe.");
+		printf("\tEst√° conta n√£o existe.");
 		}
 		else{
 		printf("\n\t======================");
@@ -135,11 +135,11 @@ void gestaodeconta(){
 		printf(" ======================");
 		printf("\n\tCliente:%d",numcliente);
 		printf("\n\tNome do(a) cliente:%s-%s",nome,apelido);
-		printf("\n\tN∫ de conta:%d%c%c100",numerosaleatorios,nome[0],apelido[0]);
+		printf("\n\tN¬∫ de conta:%d%c%c100",numerosaleatorios,nome[0],apelido[0]);
 		
-		printf("\n\tSaldo contabilÌstico:%2.2fAOA",dinheirodaconta);
+		printf("\n\tSaldo contabil√≠stico:%2.2fAOA",dinheirodaconta);
 		printf("\n\tTipo de conta: corrente");
-		printf("\n\tData de criaÁ„o da conta:%d/%d/%d\n",data_hora_actual->tm_mday,data_hora_actual->tm_mon+1,data_hora_actual->tm_year+1900);
+		printf("\n\tData de cria√ß√£o da conta:%d/%d/%d\n",data_hora_actual->tm_mday,data_hora_actual->tm_mon+1,data_hora_actual->tm_year+1900);
 		}
 		
 		//pare
@@ -151,28 +151,29 @@ void gestaodeconta(){
 		printf("\n\t======================");
 		printf("\tLevantamentos");
 		printf(" ======================");
-			printf("\n\tInsira o seu N∫ de conta:");scanf("%d",&numconta);
-		//condiÁıes aninhadas
+			printf("\n\tInsira o seu N¬∫ de conta:");scanf("%d",&numconta);
+		
+		//condi√ß√µes aninhadas
 		if(numconta==numerosaleatorios ){
 			printf("\tInsira o valor que deseja levantar:");scanf("%f",&valor_levantar);
 			saldo=5000.00;
 			levantamento = saldo-valor_levantar;
 				if(saldo==0){
-					printf("\tN„o ser· possÌvel efetuar o seu pedido. O teu saldo È negativo");
+					printf("\tN√£o ser√° poss√≠vel efetuar o seu pedido. O teu saldo √© negativo");
 					}
 						else if(saldo!=0 && saldo<valor_levantar){
-							printf("\tCaro cliente o teu saldo È inferior!");
+							printf("\tCaro cliente o teu saldo √© inferior!");
 						}
 			else{
 				printf("\n\t======================");
 				printf("\tRecibo de levantamento");
 				printf(" ======================");
 				printf("\n\tValor leventado:%2.2f\n",valor_levantar);
-				printf("\tDispıe de:%2.2fKz\n",levantamento);
+				printf("\tDisp√µe de:%2.2fKz\n",levantamento);
 			}
 		}
 		else{
-			printf("\tCaro ˙suario, este n˙mero de conta n„o condiz com o seu n˙mero de conta, por favor reinicie o sistema");
+			printf("\tCaro √∫suario, este n√∫mero de conta n√£o condiz com o seu n√∫mero de conta, por favor reinicie o sistema");
 		}
 		//pare
 		break;
@@ -183,45 +184,46 @@ void gestaodeconta(){
 		printf("\n\t======================");
 		printf("\tSeus Movimentos");
 		printf("\t======================");
-		printf("\n\tInsira o seu N∫ de conta:");scanf("%d",&numconta);
-		//condiÁ„o composta
+		printf("\n\tInsira o seu N¬∫ de conta:");scanf("%d",&numconta);
+		//condi√ß√£o composta
 		if(numconta==numerosaleatorios){
-			printf("\n\tDÈbito|-|%d/%d/%d|%f",data_hora_actual->tm_mday,data_hora_actual->tm_mon+1,data_hora_actual->tm_year+1900,levantamento);
+			printf("\n\tD√©bito|-|%d/%d/%d|%2.2f",data_hora_actual->tm_mday,data_hora_actual->tm_mon+1,data_hora_actual->tm_year+1900,levantamento);
 		}
 		else{
-			printf("\n\tCaro ˙suario, este n˙mero de conta n„o condiz com o seu n˙mero de conta, por favor reinicie o sistema");
+			printf("\n\tCaro √∫suario, este n√∫mero de conta n√£o condiz com o seu n√∫mero de conta, por favor reinicie o sistema");
 		}
 		//pare
 		break;
 		//==========================================================================
 	
-	//TransfÍrencias
+	//Transf√™rencias
 	
 	case 5:
 		printf("\n\t======================");
-		printf("\tTransfÍrencias");
+		printf("\tTransf√™rencias");
 		printf("\t======================");
-		printf("\n\tInsira o seu N∫ de conta:");scanf("%d",&numconta);
-		//condiÁ„o composta
+		printf("\n\tInsira o seu N¬∫ de conta:");scanf("%d",&numconta);
+		
+		//condi√ß√£o composta
 		if(numconta!=numerosaleatorios){
-		printf("\tEst· conta n„o existe.");
+		printf("\tEst√° conta n√£o existe.");
 		}
 		else{
 		
-		printf("\n\tInsira o  N∫ de conta a transfÍrir:");scanf("%d",&numconta_segundo);
-		printf("\n\tInsira o valor a transfÍrir:");scanf("%f",&valor_transferir);
+		printf("\n\tInsira o  N¬∫ de conta a transf√™rir:");scanf("%s",&numconta_segundo);
+		printf("\n\tInsira o valor a transf√™rir:");scanf("%f",&valor_transferir);
 		novo_saldo=saldo-valor_transferir;
-		//condiÁ„o composta
-
+		
+		//condi√ß√£o composta
 	   if(valor_transferir>dinheirodaconta){
-			printf("\n\tCaro cliente, o seu saldo n„o È suficiente");
+			printf("\n\tCaro cliente, o seu saldo n√£o √© suficiente");
 		}
 
 		else if(valor_transferir<500.00){
-			printf("\n\tN„o ser· possivÈl efectuar uma transfÍrencia abaixo de 500.00kz");
+			printf("\n\tN√£o ser√° possiv√©l efectuar uma transf√™rencia abaixo de 500.00kz");
 		}
 		else{
-			printf("\n\tTransfÍriu:%2.2fKz,dispıe de:%2.2fKz\n",valor_transferir,novo_saldo);
+			printf("\n\tTransf√™riu:%2.2fKz,disp√µe de:%2.2fKz\n",valor_transferir,novo_saldo);
 		}
 	}
 		//pare
@@ -238,7 +240,7 @@ void gestaodeconta(){
 		for(k=0;k<21;k++){iban[k]=rand()%10;
 		printf("%d",iban[k]);
 		}		
-		printf("\n\tN∫ conta: %d%c%c100",numerosaleatorios,nome[0],apelido[0]);
+		printf("\n\tN¬∫ conta: %d%c%c100",numerosaleatorios,nome[0],apelido[0]);
 		//pare
 		break;
 	case 0:
@@ -251,22 +253,22 @@ void gestaodeconta(){
 
 }
 //==========================================================================
-// funÁ„o Gest„o de utilizador
+// fun√ß√£o Gest√£o de utilizador
 int gestaoutilizador(){
-		//todas as v·riaveis do tipo inteiro
+		//todas as v√°riaveis do tipo inteiro
 		int novopin1;
 		int pinantigo;
 		int novopin2;
 		int novopin;
 		int i;
 		int opcao3;
-		// menu gest„o de utilizador
+		// menu gest√£o de utilizador
 		printf("\n\t======================");
-		printf("\tGest„o de Utilizador");
+		printf("\tGest√£o de Utilizador");
 		printf("\t======================"); 
 		printf("\n\t1. Alterar PIN");
 		printf("\n\t2. Sair");
-		printf("\n\tEscolha uma opÁ„o:");scanf("%d",&opcao3);
+		printf("\n\tEscolha uma op√ß√£o:");scanf("%d",&opcao3);
 	//==========================================================================
 		switch(opcao3){
 		case 1:
@@ -274,7 +276,7 @@ int gestaoutilizador(){
 		printf("\n\tDigite o seu novo PIN:");scanf("%d",&novopin1);
 		printf("\n\tDigite novamente seu novo PIN:");scanf("%d",&novopin2);
 	//==========================================================================
-		// enquanto o novo pin for diferente do pin de confirmaÁ„o, o programa insistir· que o user refaÁa todos os procedimentos, atÈ que os pins sejam iguais
+		// enquanto o novo pin for diferente do pin de confirma√ß√£o, o programa insistir√° que o user refa√ßa todos os procedimentos, at√© que os pins sejam iguais
 		while(novopin1!=novopin2){
 		printf("\n\tPins diferentes, verifique e digite correctamente");
 		printf("\n\tDigite o seu antigo:");scanf("%d",&pinantigo);
@@ -287,7 +289,7 @@ int gestaoutilizador(){
 }
 }
 //==========================================================================
-// funÁ„o principal
+// fun√ß√£o principal
 int main(int argc, char *argv[]){
 	//loop infinito
 	for(;;){
@@ -297,19 +299,19 @@ int main(int argc, char *argv[]){
 	//menu principal
 
 //==========================================================================
-
+	system("color f0 ");
 	printf("\n\t======================");
 	printf("\tMenu Principal");
 	printf("\t======================"); 
-	printf("\n\t1. Gest„o de conta");
-	printf("\n\t2. Gest„o de utilizador");
+	printf("\n\t1. Gest√£o de conta");
+	printf("\n\t2. Gest√£o de utilizador");
 	printf("\n\t3. Sair");
-	printf("\n\tEscolha uma opÁ„o:");scanf("%d",&opcao);
+	printf("\n\tEscolha uma op√ß√£o:");scanf("%d",&opcao);
 
 //==========================================================================
 	while(opcao!=1 && opcao !=2 && opcao!=3){
 		printf("\n\t======================");
-		printf("\n\tOpÁ„o inv·lida,escolha uma opÁ„o v·lida:");scanf("%d",&opcao);
+		printf("\n\tOp√ß√£o inv√°lida,escolha uma op√ß√£o v√°lida:");scanf("%d",&opcao);
 		
 	}
 	//estrutura de escolha
